@@ -9,8 +9,6 @@ let showBillBtn = document.querySelector('#show-bill');
 let searchFld = document.querySelector('#search-item');
 let bill = 0;
 
-// checking Local Storage
-
 // classes
 
 class newProductInfo {
@@ -161,6 +159,8 @@ function storeInLocal(product) {
 
 const getBooks = () => {
     let names, descriptions, prices;
+    
+    // checking local storage
     if (localStorage.getItem('names') === null) {
         names = ['Remax Earphone', 'Coconut Oil','Havit Mechanical Keyboard','Havit RGB Mouse',
         'Logitech Basic Speaker','Mouse pad','Laptop Cooler Fan','Extra Virgin Olive Oil'];
@@ -237,6 +237,7 @@ const clearStoreAll = () => {
     localStorage.clear();
 }
 
+// connecting event listeners
 sellForm.addEventListener('submit', AddNow);
 itemList.addEventListener('click', addToCart);
 showBillBtn.addEventListener('click', showBill);
